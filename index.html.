@@ -1,1 +1,20 @@
-yfugftgyyuyuyttyg
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a mi página web</h1>
+    </header>
+    <main>
+        <p>Este es un sitio web de ejemplo creado con GitHub Pages.</p>
+        <p>Puedes personalizarlo agregando más contenido aquí.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mi Página Web</p>
+    </footer>
+</body>
+</html>
