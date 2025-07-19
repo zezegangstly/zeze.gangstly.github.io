@@ -2,18 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ZEZE</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
-
-    :root {
-      --bg-color: #0f1115;
-      --text-color: #cfcfcf;
-      --accent-color: #3d6cb9;
-      --muted-color: #777;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -21,139 +13,105 @@
     }
 
     body {
-      font-family: 'Space Grotesk', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 4rem 1rem;
-      min-height: 100vh;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'UnifrakturCook', cursive;
+      padding: 2rem;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    header h1 {
+    h1 {
       font-size: 3rem;
-      letter-spacing: 4px;
-    }
-
-    header p {
-      font-size: 1rem;
-      color: var(--muted-color);
-      margin-top: 0.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      letter-spacing: 2px;
     }
 
     nav {
       display: flex;
+      justify-content: center;
       gap: 2rem;
       margin-bottom: 3rem;
     }
 
     nav a {
       text-decoration: none;
-      color: var(--text-color);
-      font-size: 1.1rem;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1px;
-      left: 0;
-      bottom: -2px;
-      background-color: var(--accent-color);
-      transition: width 0.3s ease;
+      color: #ccc;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      color: var(--accent-color);
-    }
-
-    nav a:hover::after {
-      width: 100%;
+      border-bottom: 1px solid #fff;
+      color: #fff;
     }
 
     section {
-      max-width: 800px;
-      width: 100%;
-      margin-bottom: 4rem;
-    }
-
-    .link {
-      margin-top: 2rem;
-      font-size: 0.9rem;
+      margin: 2rem auto;
+      max-width: 600px;
       text-align: center;
+      font-size: 1.2rem;
     }
 
-    .link a {
-      color: var(--accent-color);
-      text-decoration: none;
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
     }
 
-    .link a:hover {
-      text-decoration: underline;
+    .hidden {
+      display: none;
     }
 
-    audio {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
+    iframe {
+      display: none; /* Para que no se vea el reproductor de YouTube */
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>ZEZE</h1>
-    <p>una fachada tranquila. una mente que arde.</p>
-  </header>
+  <h1>ZEZE</h1>
 
   <nav>
-    <a href="#textos">textos</a>
-    <a href="#recuerdos">recuerdos</a>
-    <a href="#redes">redes</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#textos">Textos</a>
+    <a href="#recuerdos">Recuerdos</a>
+    <a href="https://www.instagram.com/zeze.gangstly/" target="_blank">Instagram</a>
   </nav>
 
-  <section id="textos">
-    <h2>textos</h2>
-    <p style="color: var(--muted-color); font-size: 0.95rem; margin-top: 1rem;">
-      pensamientos, confesiones, ideas que no debieron ver la luz...
-    </p>
+  <section id="inicio">
+    <p>esta es una página que parece pura, pero está llena de confesiones intensas. observa con calma.</p>
   </section>
 
-  <section id="recuerdos">
-    <h2>recuerdos</h2>
-    <p style="color: var(--muted-color); font-size: 0.95rem; margin-top: 1rem;">
-      lugares, fotos, sonidos... rastros de lo que fui y ya no soy.
-    </p>
+  <section id="textos" class="hidden">
+    <p>pronto aparecerán textos. algunos tristes. otros rabiosos. algunos... reales.</p>
   </section>
 
-  <section id="redes">
-    <h2>redes</h2>
-    <div class="link">
-      <a href="https://instagram.com/tuusuario" target="_blank">Instagram</a>
-    </div>
+  <section id="recuerdos" class="hidden">
+    <p>los recuerdos no siempre son dulces. pero siguen siendo tuyos.</p>
   </section>
 
-  <audio autoplay loop controls>
-    <source src="musica.mp3" type="audio/mpeg" />
-    Tu navegador no soporta audio HTML5.
-  </audio>
+  <footer>
+    creado por zeze — <span style="font-size: 0.8em;">tlp de alto rendimiento</span>
+  </footer>
+
+  <!-- YouTube Background Music (silenciado inicialmente) -->
+  <iframe id="music" width="0" height="0"
+    src="https://www.youtube.com/embed/9shFDK_mVFA?autoplay=1&loop=1&playlist=9shFDK_mVFA&controls=0&mute=0"
+    frameborder="0" allow="autoplay"></iframe>
+
+  <script>
+    // Navegación sencilla entre secciones
+    const links = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section");
+
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const target = link.getAttribute("href").replace("#", "");
+        sections.forEach(sec => sec.classList.add("hidden"));
+        document.getElementById(target).classList.remove("hidden");
+      });
+    });
+  </script>
 </body>
 </html>
