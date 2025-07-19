@@ -5,7 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZEZE</title>
   <style>
-    /* Reset básico */
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+
+    :root {
+      --bg-color: #0f1115;
+      --text-color: #cfcfcf;
+      --accent-color: #3d6cb9;
+      --muted-color: #777;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,137 +21,139 @@
     }
 
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
-      color: #f0f0f0;
-      line-height: 1.6;
-      padding: 2rem;
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 1rem;
+      min-height: 100vh;
     }
 
     header {
-      border-left: 5px solid #ff0080;
-      padding-left: 1rem;
-      margin-bottom: 3rem;
+      text-align: center;
+      margin-bottom: 4rem;
     }
 
-    h1 {
+    header h1 {
       font-size: 3rem;
-      font-weight: 800;
-      color: #ffffff;
+      letter-spacing: 4px;
     }
 
-    h1 span {
-      color: #ff0080;
-    }
-
-    .intro {
-      max-width: 600px;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-
-    .tagline {
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: #cccccc;
-      margin-top: -1rem;
-      margin-bottom: 2rem;
+    header p {
+      font-size: 1rem;
+      color: var(--muted-color);
+      margin-top: 0.5rem;
     }
 
     nav {
+      display: flex;
+      gap: 2rem;
       margin-bottom: 3rem;
     }
 
     nav a {
-      margin-right: 1rem;
-      color: #ff0080;
       text-decoration: none;
-      font-weight: bold;
-      border-bottom: 2px solid transparent;
-      transition: border-bottom 0.2s;
+      color: var(--text-color);
+      font-size: 1.1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      left: 0;
+      bottom: -2px;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
     }
 
     nav a:hover {
-      border-bottom: 2px solid #ff0080;
+      color: var(--accent-color);
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     section {
-      margin-bottom: 3rem;
+      max-width: 800px;
+      width: 100%;
+      margin-bottom: 4rem;
     }
 
-    .section-title {
-      font-size: 1.3rem;
-      color: #ff80bf;
-      margin-bottom: 0.5rem;
-      border-bottom: 1px solid #333;
-      padding-bottom: 0.5rem;
-    }
-
-    .card {
-      background-color: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin-top: 1rem;
-      box-shadow: 0 0 10px rgba(255, 0, 128, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: scale(1.01);
-    }
-
-    footer {
-      border-top: 1px solid #333;
-      padding-top: 2rem;
+    .link {
+      margin-top: 2rem;
       font-size: 0.9rem;
-      color: #888;
       text-align: center;
+    }
+
+    .link a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
+    audio {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Proyecto <span>ZEZE</span></h1>
-    <div class="tagline">el caos también puede ser arte</div>
-    <p class="intro">
-      Este es mi mural personal, profesional y emocional. Un espacio donde conviven mis proyectos, mis contradicciones y mi lucidez feroz. <br>
-      Un reflejo de alguien con TLP de alto rendimiento que convierte su mente hiperactiva en diseño, palabra y creación constante.
-    </p>
+    <h1>ZEZE</h1>
+    <p>una fachada tranquila. una mente que arde.</p>
   </header>
 
   <nav>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#reflexiones">Reflexiones</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#textos">textos</a>
+    <a href="#recuerdos">recuerdos</a>
+    <a href="#redes">redes</a>
   </nav>
 
-  <section id="portfolio">
-    <h2 class="section-title">Portfolio</h2>
-    <div class="card">
-      <p>Próximamente: aplicaciones, diseños, ideas y experimentos personales.</p>
+  <section id="textos">
+    <h2>textos</h2>
+    <p style="color: var(--muted-color); font-size: 0.95rem; margin-top: 1rem;">
+      pensamientos, confesiones, ideas que no debieron ver la luz...
+    </p>
+  </section>
+
+  <section id="recuerdos">
+    <h2>recuerdos</h2>
+    <p style="color: var(--muted-color); font-size: 0.95rem; margin-top: 1rem;">
+      lugares, fotos, sonidos... rastros de lo que fui y ya no soy.
+    </p>
+  </section>
+
+  <section id="redes">
+    <h2>redes</h2>
+    <div class="link">
+      <a href="https://instagram.com/tuusuario" target="_blank">Instagram</a>
     </div>
   </section>
 
-  <section id="reflexiones">
-    <h2 class="section-title">Reflexiones</h2>
-    <div class="card">
-      <p>Textos breves, pensamientos crudos y diarios de guerra interna. Aquí dejo partes de mí que no caben en un currículum.</p>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <h2 class="section-title">Contacto</h2>
-    <div class="card">
-      <p>Puedes escribirme a: <strong>zeze@proton.me</strong> o por el canal que tú ya conoces.</p>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 ZEZE — todos los derechos reservados.
-  </footer>
-
+  <audio autoplay loop controls>
+    <source src="musica.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio HTML5.
+  </audio>
 </body>
 </html>
